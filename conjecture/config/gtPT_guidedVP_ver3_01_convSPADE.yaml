@@ -103,7 +103,7 @@ train_params:
 wandb:
   entity: onebom
   enable: true
-  project: VP_conjecture_pointTrack
+  project: conjecture_VP
    
 checkpoint:
   auto_resume: true
