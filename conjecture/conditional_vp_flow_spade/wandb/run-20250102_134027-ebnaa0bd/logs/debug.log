@@ -12,3 +12,4 @@
 2025-01-02 13:40:27,038 INFO    MainThread:1172697 [wandb_init.py:init():626] wandb.init called with sweep_config: {}
 config: {}
 2025-01-02 13:40:27,038 INFO    MainThread:1172697 [wandb_init.py:init():664] wandb.init() called when a run is still active
+2025-01-04 01:24:00,741 WARNING MsgRouterThr:1172697 [router.py:message_loop():75] message_loop has been closed

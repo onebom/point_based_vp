@@ -100,5 +100,5 @@ wandb:
    
 checkpoint:
   auto_resume: true
-  resume: /data/onebom/result/ongoing/VP_conjecture_pointTrack/gtFlow_guidedVP_ver3/checkpoints/vdm_steps_105000
+  resume: /data/onebom/result/ongoing/VP_conjecture_pointTrack/gtFlow_guidedVP_ver3/checkpoints/vdm_steps_150000
   output: ${train_params.save_dir}/checkpoints/
