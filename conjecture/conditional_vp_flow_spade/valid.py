@@ -71,7 +71,6 @@ def valid(cfg, accelerator, model, valid_loader, motion_cond_predictor, global_s
         cond_frames = data[:,:,:cf]
         for i_autoreg in range(NUM_AUTOREG):
             origin_frames = data[:,:,cf+i_autoreg*pf:cf+(i_autoreg+1)*pf]
-            temp_dist = torch.tensor([pf] * bs, dtype=torch.long, device=accelerator.device)
             
             motion_cond=None
             if cfg.dataset.cond_params.cond_type is not None:
@@ -85,7 +84,6 @@ def valid(cfg, accelerator, model, valid_loader, motion_cond_predictor, global_s
             
             pred_frames = model.sample_video(cond_frames = normalize_img(cond_frames), 
                                             gt_frames = normalize_img(origin_frames), 
-                                            temporal_distance = temp_dist,
                                             motion_cond = motion_cond) 
             
             pred_frames = torch.stack(list(pred_frames), dim=0)
