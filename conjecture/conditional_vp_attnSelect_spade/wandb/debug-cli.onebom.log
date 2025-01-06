@@ -1,6 +1,0 @@
-2024-12-27 14:49:57 ERROR git root error: Cmd('git') failed due to: exit code(128)
-  cmdline: git rev-parse --show-toplevel
-  stderr: 'fatal: detected dubious ownership in repository at '/'
-To add an exception for this directory, call:
-
-	git config --global --add safe.directory /'
