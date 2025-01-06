@@ -129,7 +129,12 @@ def valid(cfg, accelerator, model, valid_loader, motion_cond_predictor, global_s
             result_motion_cond = rearrange(result_motion_cond, '(b n) auto c t pn -> b n auto c t pn', n = cfg.dataset.valid_params.num_samples)
         elif cfg.dataset.cond_params.cond_type == "flow":
             result_motion_cond = rearrange(result_motion_cond, '(b n) auto c t h w -> b n auto c t h w', n = cfg.dataset.valid_params.num_samples)
+        
+        result_motion_cond = result_motion_cond[:cfg.dataset.valid_params.num_videos]
         print("result motion shape: ", result_motion_cond.shape)
+    
+    origin_vids = origin_vids[:cfg.dataset.valid_params.num_videos]
+    result_vids = result_vids[:cfg.dataset.valid_params.num_videos]
     
     print("original video shape: ", origin_vids.shape)
     print("result video shape: ", result_vids.shape)    
