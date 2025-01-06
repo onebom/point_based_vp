@@ -1,0 +1,128 @@
+model_name: vp_ver1_only_past_pointTrack
+
+root_dir: /home/onebom/
+
+### data param
+dataset:
+  type: Cityscapes
+  direct:
+    enable: true
+  dataset_params:
+    data_dir: /data/onebom/data/Cityscapes/leftImg8bit_sequence_trainvaltest/leftImg8bit_sequence
+    frame_shape: 64
+    num_action_classes: 0
+
+  cond_params:
+    cond_type: point_track #["point_track" or "flow"]
+    # cond_dir: null
+    mode: use_preprocessd #[preprocess_ing, use_preprocessd, null]
+    point_track_params:
+      track_dim: 3 # [2: only location, 3: with visibility]
+      point_grid: 64
+      guery_frame_idx: [0, 3] #cond_frames 시작, 끝
+
+  train_params:
+    type: train
+    cond_frames: 4
+    pred_frames: 2
+    total_frames: 6
+    batch_size: 7
+    dataloader_workers: 8
+
+  valid_params:
+    type: valid
+    cond_frames: 4
+    pred_frames: 26
+    total_frames: 30
+    batch_size: 7
+    num_videos: 256
+    num_samples: 1
+    log_dir: ${train_params.save_dir}/logs_validation/
+
+### model param
+model:
+  unet:
+    type: DirectUnet3D_CrossCondAttn #[DirectUnet3D_CrossFrameAttn: None,flow , DirectUnet3D_CrossCondAttn: point_track]
+    model_params:
+      dim: 64
+      channels: 3
+      out_dim: 3
+      window_size: [2, 4, 4]
+      dim_mults: [1, 2, 4, 4, 8]
+      attn_res: [8, 4]
+      cond_num: ${dataset.train_params.cond_frames}
+      pred_num: ${dataset.train_params.pred_frames}
+      num_action_classes: ${dataset.dataset_params.num_action_classes}
+    cond_params:
+      pn_prime: 1024
+      track_dim: ${dataset.cond_params.point_track_params.track_dim}
+
+  diffusion:
+    type: GaussianDiffusion
+    diffusion_params:
+      image_size: ${dataset.dataset_params.frame_shape}
+      num_frames: ${dataset.train_params.total_frames}
+      sampling_timesteps: 50
+      loss_type: 'l2'
+      sigma_zero: True
+    noise_params:
+      noise_sampling_method: 'pyoco_mixed'
+      noise_alpha: 1.0
+
+  motion_predictor:
+    MotionEncoder:
+      image_size: ${dataset.dataset_params.frame_shape}
+      in_channels: 3
+      model_channels: 8
+      n_downs: 3
+    sde:
+      use_sde: true
+      method: 'euler_heun'
+      sde_options:
+        noise_type: 'diagonal'
+        sde_type: "stratonovich" #"Stratonovich"
+        dt: 0.1
+        rtol: 1e-3
+        atol: 1e-3
+        adaptive: False
+      unet:
+        n_layers: 2
+        nonlinear: 'tanh'
+
+
+### train param
+train_params:
+  seed: 0
+  save_dir: /data/onebom/result/ongoing/${wandb.project}/${model_name}
+  save_ckpt_freq: 5000
+  valid_freq: 5000
+  num_repeats: 1
+  max_epochs: 1000
+  max_steps: 300000
+
+  mixed_precision: "no" #["no", "fp16", "bf16"],  
+  grad_accumulation_steps: 4
+
+  optimizer:
+    type: AdamW
+    params:
+      eps: 1e-8
+      betas: [0.9, 0.999]
+      lr: 1e-4
+      weight_decay: 1e-2
+
+  lr_scheduler:
+    type: cosine
+    params:
+      lr_warmup_steps: 50000
+
+## logging param
+wandb:
+  entity: onebom
+  enable: true
+  project: pointTrack_guided_VP
+   
+checkpoint:
+  auto_resume: true
+  resume: /data/onebom/result/ongoing/pointTrack_guided_VP/vp_ver1_only_past_pointTrack/checkpoints/vdm_steps_5000
+  output: ${train_params.save_dir}/checkpoints/

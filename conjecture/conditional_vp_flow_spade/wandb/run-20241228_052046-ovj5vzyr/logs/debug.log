@@ -1,0 +1,14 @@
+2024-12-28 05:20:46,010 INFO    MainThread:1761763 [wandb_setup.py:_flush():79] Current SDK version is 0.18.5
+2024-12-28 05:20:46,010 INFO    MainThread:1761763 [wandb_setup.py:_flush():79] Configure stats pid to 1761763
+2024-12-28 05:20:46,010 INFO    MainThread:1761763 [wandb_setup.py:_flush():79] Loading settings from /home/onebom/.config/wandb/settings
+2024-12-28 05:20:46,010 INFO    MainThread:1761763 [wandb_setup.py:_flush():79] Loading settings from /data/onebom/project/point_based_vp/ongoing/conditional_vp_expm2/wandb/settings
+2024-12-28 05:20:46,010 INFO    MainThread:1761763 [wandb_setup.py:_flush():79] Loading settings from environment variables: {}
+2024-12-28 05:20:46,011 INFO    MainThread:1761763 [wandb_setup.py:_flush():79] Applying setup settings: {'mode': None, '_disable_service': None}
+2024-12-28 05:20:46,011 INFO    MainThread:1761763 [wandb_setup.py:_flush():79] Inferring run settings from compute environment: {'program_relpath': 'train.py', 'program_abspath': '/data/onebom/project/point_based_vp/ongoing/conditional_vp_expm2/train.py', 'program': '/data/onebom/project/point_based_vp/ongoing/conditional_vp_expm2/train.py'}
+2024-12-28 05:20:46,011 INFO    MainThread:1761763 [wandb_setup.py:_flush():79] Applying login settings: {}
+2024-12-28 05:20:46,011 INFO    MainThread:1761763 [wandb_init.py:_log_setup():534] Logging user logs to /data/onebom/project/point_based_vp/ongoing/conditional_vp_expm2/wandb/run-20241228_052046-ovj5vzyr/logs/debug.log
+2024-12-28 05:20:46,011 INFO    MainThread:1761763 [wandb_init.py:_log_setup():535] Logging internal logs to /data/onebom/project/point_based_vp/ongoing/conditional_vp_expm2/wandb/run-20241228_052046-ovj5vzyr/logs/debug-internal.log
+2024-12-28 05:20:46,011 INFO    MainThread:1761763 [wandb_init.py:init():621] calling init triggers
+2024-12-28 05:20:46,011 INFO    MainThread:1761763 [wandb_init.py:init():628] wandb.init called with sweep_config: {}
+config: {}
+2024-12-28 05:20:46,011 INFO    MainThread:1761763 [wandb_init.py:init():666] wandb.init() called when a run is still active

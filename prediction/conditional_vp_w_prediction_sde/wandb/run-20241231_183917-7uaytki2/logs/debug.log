@@ -1,0 +1,12 @@
+2024-12-31 18:39:17,978 INFO    MainThread:2673236 [wandb_setup.py:_flush():68] Current SDK version is 0.19.1
+2024-12-31 18:39:17,978 INFO    MainThread:2673236 [wandb_setup.py:_flush():68] Configure stats pid to 2673236
+2024-12-31 18:39:17,978 INFO    MainThread:2673236 [wandb_setup.py:_flush():68] Loading settings from /home/onebom/.config/wandb/settings
+2024-12-31 18:39:17,978 INFO    MainThread:2673236 [wandb_setup.py:_flush():68] Loading settings from /data1/onebom/project/point_based_vp/ongoing/prediction/conditional_vp_w_prediction_sde/wandb/settings
+2024-12-31 18:39:17,978 INFO    MainThread:2673236 [wandb_setup.py:_flush():68] Loading settings from environment variables
+2024-12-31 18:39:17,978 INFO    MainThread:2673236 [wandb_init.py:_log_setup():528] Logging user logs to /data1/onebom/project/point_based_vp/ongoing/prediction/conditional_vp_w_prediction_sde/wandb/run-20241231_183917-7uaytki2/logs/debug.log
+2024-12-31 18:39:17,978 INFO    MainThread:2673236 [wandb_init.py:_log_setup():529] Logging internal logs to /data1/onebom/project/point_based_vp/ongoing/prediction/conditional_vp_w_prediction_sde/wandb/run-20241231_183917-7uaytki2/logs/debug-internal.log
+2024-12-31 18:39:17,979 INFO    MainThread:2673236 [wandb_init.py:init():644] calling init triggers
+2024-12-31 18:39:17,979 INFO    MainThread:2673236 [wandb_init.py:init():650] wandb.init called with sweep_config: {}
+config: {}
+2024-12-31 18:39:17,979 INFO    MainThread:2673236 [wandb_init.py:init():675] wandb.init() called when a run is still active
+2024-12-31 18:39:56,145 WARNING MsgRouterThr:2673236 [router.py:message_loop():75] message_loop has been closed
