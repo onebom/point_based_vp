@@ -75,9 +75,10 @@ def valid(cfg, accelerator, model, valid_loader, motion_cond_predictor, global_s
             
             motion_cond=None
             if cfg.dataset.cond_params.cond_type is not None:
-                total_frames = data[:,:,i_autoreg*pf:cf+(i_autoreg+1)*pf] # origin video
-                # total_frames = torch.cat([cond_frames, origin_frames], dim=2) #reproduced video 
-                motion_cond = create_motion_cond(total_frames, motion_cond_predictor, cfg.dataset.cond_params) 
+                # tracked_frames = torch.cat([cond_frames, origin_frames], dim=2) #reproduced video
+                # tracked_frames = data[:,:,i_autoreg*pf:cf+i_autoreg*pf] # origin video
+                tracked_frames = cond_frames 
+                motion_cond = create_motion_cond(tracked_frames, motion_cond_predictor, cfg.dataset.cond_params) 
                 motion_cond = motion_cond.to(accelerator.device)
                 
                 result_motions.append(motion_cond.unsqueeze(1))#[b 1 c cf+pf pn] or [b 1 c cf+pf h w]
