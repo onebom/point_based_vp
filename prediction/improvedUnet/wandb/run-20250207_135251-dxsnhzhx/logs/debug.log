@@ -1,0 +1,15 @@
+2025-02-07 13:52:51,471 INFO    MainThread:167018 [wandb_setup.py:_flush():79] Current SDK version is 0.18.5
+2025-02-07 13:52:51,471 INFO    MainThread:167018 [wandb_setup.py:_flush():79] Configure stats pid to 167018
+2025-02-07 13:52:51,471 INFO    MainThread:167018 [wandb_setup.py:_flush():79] Loading settings from /home/onebom/.config/wandb/settings
+2025-02-07 13:52:51,471 INFO    MainThread:167018 [wandb_setup.py:_flush():79] Loading settings from /data/onebom/project/ongoing/point_based_vp/conjecture_improvedUnet/wandb/settings
+2025-02-07 13:52:51,471 INFO    MainThread:167018 [wandb_setup.py:_flush():79] Loading settings from environment variables: {}
+2025-02-07 13:52:51,471 INFO    MainThread:167018 [wandb_setup.py:_flush():79] Applying setup settings: {'mode': None, '_disable_service': None}
+2025-02-07 13:52:51,471 INFO    MainThread:167018 [wandb_setup.py:_flush():79] Inferring run settings from compute environment: {'program_relpath': 'conjecture_improvedUnet/train.py', 'program_abspath': '/data/onebom/project/ongoing/point_based_vp/conjecture_improvedUnet/train.py', 'program': '/data/onebom/project/ongoing/point_based_vp/conjecture_improvedUnet/train.py'}
+2025-02-07 13:52:51,471 INFO    MainThread:167018 [wandb_setup.py:_flush():79] Applying login settings: {}
+2025-02-07 13:52:51,471 INFO    MainThread:167018 [wandb_init.py:_log_setup():534] Logging user logs to /data/onebom/project/ongoing/point_based_vp/conjecture_improvedUnet/wandb/run-20250207_135251-dxsnhzhx/logs/debug.log
+2025-02-07 13:52:51,471 INFO    MainThread:167018 [wandb_init.py:_log_setup():535] Logging internal logs to /data/onebom/project/ongoing/point_based_vp/conjecture_improvedUnet/wandb/run-20250207_135251-dxsnhzhx/logs/debug-internal.log
+2025-02-07 13:52:51,471 INFO    MainThread:167018 [wandb_init.py:init():621] calling init triggers
+2025-02-07 13:52:51,471 INFO    MainThread:167018 [wandb_init.py:init():628] wandb.init called with sweep_config: {}
+config: {}
+2025-02-07 13:52:51,471 INFO    MainThread:167018 [wandb_init.py:init():666] wandb.init() called when a run is still active
+2025-02-07 13:53:06,958 WARNING MsgRouterThr:167018 [router.py:message_loop():77] message_loop has been closed
