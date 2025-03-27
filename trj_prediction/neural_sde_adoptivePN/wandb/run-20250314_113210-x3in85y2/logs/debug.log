@@ -1,0 +1,14 @@
+2025-03-14 11:32:10,389 INFO    MainThread:978813 [wandb_setup.py:_flush():79] Current SDK version is 0.18.5
+2025-03-14 11:32:10,389 INFO    MainThread:978813 [wandb_setup.py:_flush():79] Configure stats pid to 978813
+2025-03-14 11:32:10,389 INFO    MainThread:978813 [wandb_setup.py:_flush():79] Loading settings from /home/onebom/.config/wandb/settings
+2025-03-14 11:32:10,389 INFO    MainThread:978813 [wandb_setup.py:_flush():79] Loading settings from /data/onebom/project/ongoing/point_based_vp/trj_prediction/neural_sde_adoptivePN/wandb/settings
+2025-03-14 11:32:10,389 INFO    MainThread:978813 [wandb_setup.py:_flush():79] Loading settings from environment variables: {}
+2025-03-14 11:32:10,389 INFO    MainThread:978813 [wandb_setup.py:_flush():79] Applying setup settings: {'mode': None, '_disable_service': None}
+2025-03-14 11:32:10,389 INFO    MainThread:978813 [wandb_setup.py:_flush():79] Inferring run settings from compute environment: {'program_relpath': 'trj_prediction/neural_sde_adoptivePN/train.py', 'program_abspath': '/data/onebom/project/ongoing/point_based_vp/trj_prediction/neural_sde_adoptivePN/train.py', 'program': '/data/onebom/project/ongoing/point_based_vp/trj_prediction/neural_sde_adoptivePN/train.py'}
+2025-03-14 11:32:10,390 INFO    MainThread:978813 [wandb_setup.py:_flush():79] Applying login settings: {}
+2025-03-14 11:32:10,390 INFO    MainThread:978813 [wandb_init.py:_log_setup():534] Logging user logs to /data/onebom/project/ongoing/point_based_vp/trj_prediction/neural_sde_adoptivePN/wandb/run-20250314_113210-x3in85y2/logs/debug.log
+2025-03-14 11:32:10,390 INFO    MainThread:978813 [wandb_init.py:_log_setup():535] Logging internal logs to /data/onebom/project/ongoing/point_based_vp/trj_prediction/neural_sde_adoptivePN/wandb/run-20250314_113210-x3in85y2/logs/debug-internal.log
+2025-03-14 11:32:10,390 INFO    MainThread:978813 [wandb_init.py:init():621] calling init triggers
+2025-03-14 11:32:10,390 INFO    MainThread:978813 [wandb_init.py:init():628] wandb.init called with sweep_config: {}
+config: {}
+2025-03-14 11:32:10,390 INFO    MainThread:978813 [wandb_init.py:init():666] wandb.init() called when a run is still active
